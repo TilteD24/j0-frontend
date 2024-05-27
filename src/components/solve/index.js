@@ -10,7 +10,7 @@ import "ace-builds/src-noconflict/ext-language_tools";
 
 async function fetchLanguages() {
   try {
-    const res = await fetch("http://localhost:5000/submit", {
+    const res = await fetch("https://judge0-backend-4gbd.onrender.com/submit", {
       method: "GET",
       headers: { "Content-Type": "Apllication/json" },
     });

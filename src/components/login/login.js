@@ -19,13 +19,16 @@ function LoginForm({ onLoginSuccess }) {
     const jsonData = JSON.stringify(formDataObject);
 
     try {
-      const res = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: jsonData,
-      });
+      const res = await fetch(
+        "https://judge0-backend-4gbd.onrender.com/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: jsonData,
+        }
+      );
 
       if (res.status === 401) {
         setwarn("Incorrect email Id or password");

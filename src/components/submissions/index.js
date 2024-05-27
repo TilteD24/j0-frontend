@@ -3,12 +3,15 @@ import "./index.css";
 
 async function fetchSubmissions() {
   try {
-    const res = await fetch("http://localhost:5000/submissions", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    });
+    const res = await fetch(
+      "https://judge0-backend-4gbd.onrender.com/submissions",
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    );
 
     const data = await res.json();
     return data.submissions;

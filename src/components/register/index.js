@@ -14,21 +14,24 @@ function Register({ setAccessToken }) {
       password: password.value,
     };
 
-    const jsonData = JSON.stringify(submitData)
+    const jsonData = JSON.stringify(submitData);
 
-    const res = await fetch("http://localhost:5000/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: jsonData,
-    });
+    const res = await fetch(
+      "https://judge0-backend-4gbd.onrender.com/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: jsonData,
+      }
+    );
 
     const data = await res.json();
 
     if (res.status === 201) {
       setAccessToken(data.accessToken);
-      localStorage.setItem('accessToken', data.accessToken)
+      localStorage.setItem("accessToken", data.accessToken);
       navigate("/");
     }
   };

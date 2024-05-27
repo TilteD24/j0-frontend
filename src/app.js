@@ -15,7 +15,7 @@ function App() {
 
   const fetchProblems = async () => {
     try {
-      const res = await fetch("http://localhost:5000/", {
+      const res = await fetch("https://judge0-backend-4gbd.onrender.com/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
