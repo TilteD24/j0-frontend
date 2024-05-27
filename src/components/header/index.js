@@ -18,7 +18,7 @@ function Header({ accessToken, imageLoaded, onImageLoad }) {
 
   useEffect(() => {
     if (accessToken) {
-      fetch("http://localhost:5000/login", {
+      fetch("https://judge0-backend-4gbd.onrender.com/login", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -30,7 +30,7 @@ function Header({ accessToken, imageLoaded, onImageLoad }) {
         });
     }
   }, [accessToken]);
-  
+
   return (
     <>
       <div id="header" style={{ position: "relative" }}>
@@ -47,8 +47,15 @@ function Header({ accessToken, imageLoaded, onImageLoad }) {
         {imageLoaded && (
           <div className="userlogin">
             <div>
-              {username ? <>{emptyBtn} |{" "}{logoutBtn} |{" "}{submissionsBtn}</> : <>{loginBtn} |{" "}{registerBtn}</>}
-
+              {username ? (
+                <>
+                  {emptyBtn} | {logoutBtn} | {submissionsBtn}
+                </>
+              ) : (
+                <>
+                  {loginBtn} | {registerBtn}
+                </>
+              )}
             </div>
           </div>
         )}
