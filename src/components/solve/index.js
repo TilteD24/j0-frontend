@@ -76,14 +76,17 @@ function Solve({ problems }) {
     const submitDataObject = JSON.stringify(submitData);
     //console.log(submitDataObject);
     try {
-      const res = await fetch("http://localhost:5000/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "Application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: submitDataObject,
-      });
+      const res = await fetch(
+        "https://judge0-backend-4gbd.onrender.com/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "Application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: submitDataObject,
+        }
+      );
 
       const data = await res.json();
 
