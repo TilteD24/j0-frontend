@@ -91,10 +91,10 @@ function Solve({ problems }) {
       const data = await res.json();
 
       if (res.status === 500) {
-        setOutput(`Error!\n${data.error}`);
+        setOutput(`Error!\n500${data.error}`);
         setCompiling(false);
       } else if (res.status === 201) {
-        if (data.error) setOutput(`Error!\n${data.error}`);
+        if (data.error) setOutput(`Error!\n201${data.error}`);
         else if (data.outputMessage === "")
           setOutput(`All test cases passed!\n${data.output}`);
         else setOutput(data.outputMessage);
