@@ -18,8 +18,8 @@ label {
 
 /* Form input fields */
 input[type="email"],
-input[type="password"],
-input[type="username"] {
+input[type="text"],
+input[type="password"] {
   font-size: large;
   width: 100%;
   padding: 10px;

@@ -42,7 +42,7 @@ function Register({ setAccessToken }) {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
-            <input type="email" id="username" name="username" required />
+            <input type="text" id="username" name="username" required />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email:</label>
