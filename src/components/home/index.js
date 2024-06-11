@@ -4,7 +4,7 @@ import "./index.css";
 function Home({ problems }) {
   return (
     <>
-      <h2>Problems</h2>
+      <h3>Problems</h3>
       {problems &&
         problems.map((problem) => (
           <div className="problem-container">

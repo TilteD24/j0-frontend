@@ -45,18 +45,20 @@ function LoginForm({ onLoginSuccess }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email_id" required />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-      </div>
-      <h3 style={{ color: "red" }}>{warn}</h3>
-      <button type="submit">Log In</button>
-    </form>
+    <div className="form-container">
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email_id" required />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <h3 style={{ color: "red" }}>{warn}</h3>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
   );
 }
 

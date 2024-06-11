@@ -10,12 +10,6 @@ function Header({ accessToken, imageLoaded, onImageLoad }) {
     localStorage.removeItem("accessToken");
   };
 
-  const logoutBtn = <a onClick={logoutHandler}>Logout</a>;
-  const registerBtn = <a href="/register">Register</a>;
-  const loginBtn = <a href="/login">Login</a>;
-  const emptyBtn = <a>{username}</a>;
-  const submissionsBtn = <a href="/submissions">Submissions</a>;
-
   useEffect(() => {
     if (accessToken) {
       fetch("https://judge0-backend-4gbd.onrender.com/login", {
@@ -32,35 +26,44 @@ function Header({ accessToken, imageLoaded, onImageLoad }) {
   }, [accessToken]);
 
   return (
-    <>
-      <div id="header" style={{ position: "relative" }}>
-        <div style={{ float: "left", maxHeight: "90px" }}>
+    <div className="header-container">
+      <header className="header">
+        <div className="header__logo">
           <a href="/">
             <img
               src={banner}
               alt="Judge0"
-              style={{ height: "100px" }}
+              className="header__logo-img"
               onLoad={() => onImageLoad(true)}
             />
           </a>
         </div>
         {imageLoaded && (
-          <div className="userlogin">
-            <div>
-              {username ? (
-                <>
-                  {emptyBtn} | {logoutBtn} | {submissionsBtn}
-                </>
-              ) : (
-                <>
-                  {loginBtn} | {registerBtn}
-                </>
-              )}
-            </div>
-          </div>
+          <nav className="header__nav">
+            {username ? (
+              <>
+                <span className="header__nav-item">{username}</span>
+                <a className="header__nav-item" onClick={logoutHandler}>
+                  Logout
+                </a>
+                <a className="header__nav-item" href="/submissions">
+                  Submissions
+                </a>
+              </>
+            ) : (
+              <>
+                <a className="header__nav-item" href="/login">
+                  Login
+                </a>
+                <a className="header__nav-item" href="/register">
+                  Register
+                </a>
+              </>
+            )}
+          </nav>
         )}
-      </div>
-    </>
+      </header>
+    </div>
   );
 }
 

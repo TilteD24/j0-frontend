@@ -1,28 +1,52 @@
-#header {
-  min-height: 7em;
-  margin: 0 1em;
+/* Reset some basic elements to avoid browser inconsistencies */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-div {
-  display: block;
-}
-
-img {
-  overflow-clip-margin: content-box;
-  overflow: clip;
-}
-
-.userlogin {
-  float: right;
-  text-align: right;
-}
-a {
-  color: black;
-  cursor: pointer;
-  text-decoration: underline;
+body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-a:link {
+.header-container {
+  width: 100%;
+  padding: 0 1em; /* Margin on the sides */
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Limit the max width for better readability */
+  margin: 0 auto; /* Center the header */
+}
+
+.header__logo {
+  flex: 1;
+}
+
+.header__logo-img {
+  height: 100px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-item {
+  margin-left: 1em;
   color: #00c;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header__nav-item:hover {
+  color: #0073e6;
 }

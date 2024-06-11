@@ -47,6 +47,8 @@ function App() {
             onImageLoad={setImageLoaded}
             imageLoaded={imageLoaded}
           />
+          <br />
+          <br />
           {imageLoaded && (
             <Routes>
               <Route path="/" element={<Home problems={problems} />}></Route>
