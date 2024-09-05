@@ -49,11 +49,23 @@ function LoginForm({ onLoginSuccess }) {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email_id" required />
+          <input
+            type="email"
+            id="email"
+            name="email_id"
+            value={"user1@example.com"}
+            required
+          />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input type="password" id="password" name="password" required />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={"password1"}
+            required
+          />
         </div>
         <h3 style={{ color: "red" }}>{warn}</h3>
         <button type="submit">Log In</button>
